@@ -1,10 +1,10 @@
 import carNameinput from "./InputView/carNameInput.js";
-import moveCountInput from "./InputView/moveCountInput.js";
+import moveAttemptCountInput from "./InputView/moveAttemptCountInput.js";
 
 class App {
   async run() {
-    await carNameinput();
-    await moveCountInput();
+    const carNames = await carNameinput();
+    const moveCount = await moveAttemptCountInput();
   }
 }
 
