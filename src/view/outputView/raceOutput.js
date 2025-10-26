@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import { raceResult } from "../carMove.js";
+import { raceResult } from "../../model/carModel.js";
 
 export function raceOutput(carsObject, moveAttemptCount) {
     Console.print('\n실행 결과');

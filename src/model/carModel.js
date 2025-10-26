@@ -12,7 +12,7 @@ export function setCarInfo(parsedCarNames) {
     return carsInfo;
 }
 
-export function handleCarMove(carsObject, carName) {
+function handleCarMove(carsObject, carName) {
     const randomNum = Random.pickNumberInRange(0, 9);
     if (randomNum >= 4) {
         carsObject[carName] += MOVE_MARK;

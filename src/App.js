@@ -1,21 +1,23 @@
-import carNameinput from "./InputView/carNameInput.js";
-import moveAttemptCountInput from "./InputView/moveAttemptCountInput.js";
-import { carNameParser } from "./parser.js";
-import { setCarInfo } from "./carMove.js";
-import { raceOutput } from "./OutputView/raceOutput.js";
-import { getWinner } from "./getWinner.js";
-import winnerOutput from "./OutputView/WinnerOutput.js";
+import getCarNames from "./view/inputView/getCarNames.js";
+import getMoveAttemptCount from "./view/inputView/getMoveAttemptCount.js";
+import { carNameParser, moveAttemptCountParser } from "./parser.js";
+import { setCarInfo } from "./model/carModel.js";
+import { raceOutput } from "./view/outputView/raceOutput.js";
+import { getWinner } from "./model/winnerModel.js";
+import winnerOutput from "./view/outputView/winnerOutput.js";
 
 class App {
   async run() {
-    const carNames = await carNameinput();
-    const moveAttemptCount = await moveAttemptCountInput();
-
+    const carNames = await getCarNames();
     const parsedCarNames = carNameParser(carNames);
+
+    const moveAttemptCount = await getMoveAttemptCount();
+    const parsedMoveAttemptCount = moveAttemptCountParser(moveAttemptCount);
+    
 
     let cars = setCarInfo(parsedCarNames);
 
-    raceOutput(cars, moveAttemptCount);
+    raceOutput(cars, parsedMoveAttemptCount);
 
     const winners = getWinner(cars);
 
