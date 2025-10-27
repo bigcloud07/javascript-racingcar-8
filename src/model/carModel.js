@@ -1,32 +1,32 @@
-import { Console } from "@woowacourse/mission-utils";
-import { Random } from "@woowacourse/mission-utils";
+import { Console , Random } from '@woowacourse/mission-utils';
 
 const MOVE_MARK = '-';
 
+export function setCars(parsedCarNames) {
+  let cars = {};
+  const entries = parsedCarNames.map((carName) => [carName, '']);
+  cars = Object.fromEntries(entries);
 
-export function setCarInfo(parsedCarNames) {
-    let carsInfo = {};
-    const entries = parsedCarNames.map((carName) => [carName, '']);
-    carsInfo = Object.fromEntries(entries);
-
-    return carsInfo;
+  return cars;
 }
 
 function handleCarMove(carsObject, carName) {
-    const randomNum = Random.pickNumberInRange(0, 9);
-    if (randomNum >= 4) {
-        carsObject[carName] += MOVE_MARK;
-    }
+  const randomNum = Random.pickNumberInRange(0, 9);
+  if (randomNum >= 4) {
+    carsObject[carName] += MOVE_MARK;
+  }
 }
 
 export function updateCarMoveCount(carsObject) {
-    Object.keys(carsObject).forEach((carName) => handleCarMove(carsObject, carName));
+  Object.keys(carsObject).forEach((carName) =>
+    handleCarMove(carsObject, carName),
+  );
 }
 
 export function raceResult(carsObject) {
-    updateCarMoveCount(carsObject);
-    const updatedCarsEntries = Object.entries(carsObject);
-    updatedCarsEntries.forEach(([key, value]) => {
-        Console.print(`${key} : ${value}`);
-    })
+  updateCarMoveCount(carsObject);
+  const updatedCarsEntries = Object.entries(carsObject);
+  updatedCarsEntries.forEach(([key, value]) => {
+    Console.print(`${key} : ${value}`);
+  });
 }
