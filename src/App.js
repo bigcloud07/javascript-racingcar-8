@@ -10,11 +10,10 @@ class App {
   async run() {
     const carNames = await getCarNames();
     const parsedCarNames = carNameParser(carNames);
+    const cars = setCars(parsedCarNames);
 
     const moveAttemptCount = await getMoveAttemptCount();
     const parsedMoveAttemptCount = moveAttemptCountParser(moveAttemptCount);
-
-    const cars = setCars(parsedCarNames);
 
     raceOutput(cars, parsedMoveAttemptCount);
 
