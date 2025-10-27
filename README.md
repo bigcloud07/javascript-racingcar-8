@@ -44,18 +44,18 @@ src
 │ └── winnerModel.js                    # Moedel - 우승자 선정 관련 비즈니스 로직
 │   
 ├── view/
-│ ├── inputView                         # View - 사용자 입력 값 처리
+│ ├── inputView/                        # View - 사용자 입력 값 처리
 │ │ ├── getCarNames.js                  
 │ │ └── getMoveAttemptCount.js          
 │ │
-│ └── outputView                        # View - 출력 값 처리
+│ └── outputView/                       # View - 출력 값 처리
 │ ├─── raceOutput.js                    
 │ └─── winnerOutput.js                  
 │
 ├── App.js                              # Controller - 전체 프로그램 실행 및 흐름 제어
 │
 └── parser.js                           # Utils - 입력값 파싱
-└── validate    
+└── validate/    
     ├── carNameValidate.js              # Utils - 자동차 이름 입력값 검증  
     └── moveAttemptCountValidate.js     # Utils - 라운드 수 입력값 검증
 ```
