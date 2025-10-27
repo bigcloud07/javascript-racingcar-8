@@ -61,7 +61,7 @@ src
 ```
 # 🔍 테스트 코드 
 - 각 모듈별로 테스트 코드를 만들어서 test를 진행했습니다.
-- `ApplicationTest.js`외에 추가적으로 정상 작동하는 시나리오를 몇개 추가해 `ApplicationAdditionalTest` 테스를 추가했습니다.
+- `ApplicationTest.js`외에 추가적으로 정상 작동하는 시나리오를 추가해서 `ApplicationAdditionalTest` 테스트를 추가했습니다.
 ```
 __tests__/
 ├── modelTest/                              # Model 비즈니스 로직 테스트
