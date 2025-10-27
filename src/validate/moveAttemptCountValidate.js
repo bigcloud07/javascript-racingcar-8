@@ -1,5 +1,5 @@
 export function validateEmptyAttemptCountInput(attemptCount) {
-  const isEmptyAttemptCountInput = attemptCount.length == 0;
+  const isEmptyAttemptCountInput = attemptCount.length === 0;
   if (isEmptyAttemptCountInput) {
     throw new Error('[ERROR] 시행 횟수를 입력해주세요');
   }

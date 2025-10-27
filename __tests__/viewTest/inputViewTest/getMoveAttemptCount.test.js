@@ -15,6 +15,8 @@ describe('getMoveAttemptCount unit test', () => {
     const result = await getMoveAttemptCount();
 
     expect(result).toBe(mockInput);
-    expect(Console.readLineAsync).toHaveBeenCalledWith('시도할 횟수는 몇 회인가요?\n');
+    expect(Console.readLineAsync).toHaveBeenCalledWith(
+      '시도할 횟수는 몇 회인가요?\n',
+    );
   });
 });

@@ -3,7 +3,7 @@ import { raceResult } from '../../model/carModel.js';
 
 export function raceOutput(carsObject, moveAttemptCount) {
   Console.print('\n실행 결과');
-  for (let i = 0; i < moveAttemptCount; i++) {
+  for (let round = 0; round < moveAttemptCount; round += 1) {
     raceResult(carsObject);
     Console.print('');
   }

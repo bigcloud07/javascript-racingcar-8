@@ -1,12 +1,12 @@
 export function validateEmptyCarNames(carNames) {
-  const isEmptyInput = carNames.some((carName) => carName.length == 0);
+  const isEmptyInput = carNames.some((carName) => carName.length === 0);
   if (isEmptyInput) {
     throw new Error('[ERROR] 자동차 이름을 입력해주세요');
   }
 }
 
 export function validateSingleCarInput(carNames) {
-  const isSigleCarInput = carNames.length == 1;
+  const isSigleCarInput = carNames.length === 1;
   if (isSigleCarInput) {
     throw new Error('[ERROR] 자동차를 2대 이상 입력해주세요');
   }

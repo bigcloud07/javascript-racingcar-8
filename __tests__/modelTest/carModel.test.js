@@ -1,6 +1,9 @@
-
 import { Console, Random } from '@woowacourse/mission-utils';
-import { setCars, updateCarMoveCount, raceResult } from '../../src/model/carModel.js';
+import {
+  setCars,
+  updateCarMoveCount,
+  raceResult,
+} from '../../src/model/carModel.js';
 
 jest.mock('@woowacourse/mission-utils', () => ({
   Console: { print: jest.fn() },
@@ -8,8 +11,10 @@ jest.mock('@woowacourse/mission-utils', () => ({
 }));
 
 const setRandomPickSequence = (...sequence) => {
-  (Random.pickNumberInRange).mockReset();
-  sequence.forEach((number) => (Random.pickNumberInRange).mockReturnValueOnce(number));
+  Random.pickNumberInRange.mockReset();
+  sequence.forEach((number) =>
+    Random.pickNumberInRange.mockReturnValueOnce(number),
+  );
 };
 
 beforeEach(() => {
